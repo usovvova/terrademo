@@ -20,12 +20,9 @@ terraform {
   }
 }
 
-
 provider "aws" {
   region = "us-east-1"
 }
-
-
 
 resource "random_pet" "sg" {}
 
@@ -50,7 +47,6 @@ resource "aws_security_group" "web-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
 
 output "web-address" {
   value = "${aws_instance.web.public_dns}:8080"
