@@ -23,7 +23,7 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
-  shared_credentials_file = "/home/cloud_user/learn-terraform-github-actions/.aws/credentials"
+  shared_credentials_file = "/home/cloud_user/.aws/credentials"
   profile = "testing"
 }
 
