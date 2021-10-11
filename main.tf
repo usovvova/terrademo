@@ -12,17 +12,17 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "example-org-55d5a5"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "mada-test"
     }
   }
 }
 
 
 provider "aws" {
-  region = "us-east-1"
+  region = "eu-central-1"
 }
 
 
