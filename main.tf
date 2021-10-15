@@ -50,6 +50,7 @@ resource "aws_instance" "web" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.web-sg.id]
   availability_zone      = module.vpc.azs[0]
+  subnet_id              = module.vpc.public_subnets[0]
   user_data              = <<-EOF
               #!/bin/bash
               echo "Hello, World" > index.html
