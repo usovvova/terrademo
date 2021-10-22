@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "test-demo-terraform"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "demo-terraform-workspace"
     }
   }
 }
@@ -54,3 +54,5 @@ resource "aws_security_group" "web-sg" {
 output "web-address" {
   value = "${aws_instance.web.public_dns}:8080"
 }
+
+#test-git
