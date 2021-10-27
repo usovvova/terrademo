@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "test-endianness"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "ci-cd-github-workflow"
     }
   }
 }
