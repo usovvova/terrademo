@@ -1,6 +1,3 @@
-# new update 
-# even newer 
-# and three 
 
 terraform {
   required_providers {
@@ -23,8 +20,7 @@ terraform {
     }
   }
 }
-
-
+  
 provider "aws" {
   region = "us-east-1"
 }
