@@ -1,3 +1,4 @@
+
 terraform {
   required_providers {
     aws = {
@@ -12,15 +13,14 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "TestLabKLD"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "demo-github-actions"
     }
   }
 }
-
-
+  
 provider "aws" {
   region = "us-east-1"
 }
