@@ -1,4 +1,4 @@
-# branch 6
+# branch 7
 variable "main_region" {
   type    = string
   default = "eu-west-2"
