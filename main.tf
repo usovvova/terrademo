@@ -1,3 +1,4 @@
+# delete this comment
 variable "main_region" {
   type    = string
   default = "eu-west-2"
