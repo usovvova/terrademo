@@ -25,7 +25,7 @@ terraform {
     organization = "CloudAnalytic"
 
     workspaces {
-      name = "Prod"
+      name = "ACG-Demo"
     }
   }
 }
