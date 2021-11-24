@@ -1,3 +1,13 @@
+# brach 9
+variable "main_region" {
+  type    = string
+  default = "eu-west-2"
+
+}
+provider "aws" {
+  region = var.main_region
+}
+
 terraform {
   required_providers {
     aws = {
@@ -12,45 +22,23 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "CloudAnalytic"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "Prod"
     }
   }
 }
 
 
-provider "aws" {
-  region = "us-east-1"
+module "vpc" {
+  source = "./modules/vpc"
+  region = var.main_region
+
+}
+resource "aws_instance" "CWWebServer" {
+  ami           = module.vpc.CW_ami_id
+  subnet_id     = module.vpc.CW_pub_sub_id
+  instance_type = "t2.micro"
 }
 
-
-
-resource "random_pet" "sg" {}
-
-resource "aws_instance" "web" {
-  ami                    = "ami-09e67e426f25ce0d7"
-  instance_type          = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.web-sg.id]
-
-  user_data = <<-EOF
-              #!/bin/bash
-              echo "Hello, World" > index.html
-              nohup busybox httpd -f -p 8080 &
-              EOF
-}
-
-resource "aws_security_group" "web-sg" {
-  name = "${random_pet.sg.id}-sg"
-  ingress {
-    from_port   = 8080
-    to_port     = 8080
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
-
-output "web-address" {
-  value = "${aws_instance.web.public_dns}:8080"
-}
