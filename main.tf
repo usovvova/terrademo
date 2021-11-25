@@ -15,7 +15,7 @@ terraform {
     organization = "UnixManCloud"
 
     workspaces {
-      name = "learn-terraform-github-actions"
+      name = "demo-github-actions"
     }
   }
 }
@@ -43,6 +43,12 @@ resource "aws_instance" "web" {
 
 resource "aws_security_group" "web-sg" {
   name = "${random_pet.sg.id}-sg"
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   ingress {
     from_port   = 8080
     to_port     = 8080
