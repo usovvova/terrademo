@@ -40,6 +40,7 @@ resource "aws_instance" "CWWebServer" {
   ami           = module.vpc.CW_ami_id
   subnet_id     = module.vpc.CW_pub_sub_id
   instance_type = "t2.micro"
+  vpc_security_group_ids = module.vpc.CW_web_sg_id
   tags = {
     Name = "CWWebServer"
   }
