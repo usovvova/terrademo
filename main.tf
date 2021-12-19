@@ -12,20 +12,17 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "ACG-Terraform-Demos-BDS1"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "demo-github-actions"
     }
   }
 }
 
-
 provider "aws" {
   region = "us-east-1"
 }
-
-
 
 resource "random_pet" "sg" {}
 
