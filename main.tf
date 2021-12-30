@@ -1,3 +1,4 @@
+# Version 0.0.2
 terraform {
   required_providers {
     aws = {
@@ -12,10 +13,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "TE-ACG-Terraform-Demos"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "demos-github-actions"
     }
   }
 }
