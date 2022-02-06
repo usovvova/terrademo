@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "acg-terraform-demos-dapeng"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "demo-gatehub-actions"
     }
   }
 }
