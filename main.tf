@@ -1,3 +1,7 @@
+
+//GE 2/15/22 - training demo from CG
+
+
 terraform {
   required_providers {
     aws = {
