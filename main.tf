@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "SEULLC"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "Terraform-github-actions"
     }
   }
 }
@@ -24,7 +24,6 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
-
 
 
 resource "random_pet" "sg" {}
