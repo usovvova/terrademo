@@ -1,3 +1,8 @@
+
+//GE 2/15/22 - training demo from CG
+//Version 3
+
+
 terraform {
   required_providers {
     aws = {
@@ -12,19 +17,17 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "SEULLC"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "Terraform-github-actions"
     }
   }
 }
 
-
 provider "aws" {
   region = "us-east-1"
 }
-
 
 
 resource "random_pet" "sg" {}
