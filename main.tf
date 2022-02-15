@@ -1,3 +1,8 @@
+
+//GE 2/15/22 - training demo from CG
+//Version 4
+
+
 terraform {
   required_providers {
     aws = {
@@ -19,7 +24,6 @@ terraform {
     }
   }
 }
-
 
 provider "aws" {
   region = "us-east-1"
