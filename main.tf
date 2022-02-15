@@ -1,6 +1,6 @@
 
 //GE 2/15/22 - training demo from CG
-
+//Version 2
 
 terraform {
   required_providers {
