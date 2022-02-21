@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "ACG-Terraform-Demos-muha1"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "gh-actions-demo"
     }
   }
 }
