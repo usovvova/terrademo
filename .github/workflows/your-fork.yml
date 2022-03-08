@@ -1,4 +1,5 @@
-name: Your Fork
+name: maggit0/learn-terraform-github-actions
+
 
 on:
   pull_request_target:
