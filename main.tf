@@ -12,7 +12,7 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "atym_test"
+    organization = "atym-test"
 
     workspaces {
       name = "demo-github-actions"
