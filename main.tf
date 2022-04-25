@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "patb2022-terraform"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "patb2022-apiWorkspace"
     }
   }
 }
