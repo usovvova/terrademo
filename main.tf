@@ -12,17 +12,17 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "cicdautomation"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "automate"
     }
   }
 }
 
 
 provider "aws" {
-  region = "us-east-1"
+  region = "eu-central-1"
 }
 
 
@@ -36,7 +36,7 @@ resource "aws_instance" "web" {
 
   user_data = <<-EOF
               #!/bin/bash
-              echo "Hello, World" > index.html
+              echo "Hello, Bishess" > index.html
               nohup busybox httpd -f -p 8080 &
               EOF
 }
