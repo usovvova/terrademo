@@ -26,14 +26,21 @@ provider "aws" {
 }
 
 
-
-resource "random_pet" "sg" {}
-
 resource "aws_instance" "web" {
-  ami                    = "ami-09e67e426f25ce0d7"
+  ami                    = "ami-04505e74c0741db8d"
   instance_type          = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.web-sg.id]
-
+    key_name                     = "ctl-lab-paul-keypair"
+  subnet_id                    = "subnet-09feeeb8979775546" # ctl-labpaul-sn-e1a-pub vpc-024b32e1dd87fb170 | ctl-lab-paul-vpc
+  security_groups              = ["sg-0cd605765f7479130", "sg-0f89ecfb2b8df28a5"]
+  tags = {
+    Name              = "paul-baremetal_02",
+    CreatedFor            = "Paul Schweiss",
+    Environment           = "ctl-lab",
+    "Operating System"    = "Linux",
+    "Project Name"        = "Terraform Cloud GitHub Actions",
+    "Automation Platform" = "Terraform"
+  }
+  
   user_data = <<-EOF
               #!/bin/bash
               echo "Hello, World" > index.html
@@ -41,15 +48,7 @@ resource "aws_instance" "web" {
               EOF
 }
 
-resource "aws_security_group" "web-sg" {
-  name = "${random_pet.sg.id}-sg"
-  ingress {
-    from_port   = 8080
-    to_port     = 8080
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
+
 
 output "web-address" {
   value = "${aws_instance.web.public_dns}:8080"
