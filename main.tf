@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "ACG-Terraform-GitHub-Actions-Demos"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "demo-github-actions"
     }
   }
 }
@@ -33,6 +33,10 @@ resource "aws_instance" "web" {
   ami                    = "ami-09e67e426f25ce0d7"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.web-sg.id]
+
+  tags = {
+    Name = "Hello-World 08-07-2022"
+  }
 
   user_data = <<-EOF
               #!/bin/bash
