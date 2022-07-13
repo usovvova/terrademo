@@ -27,20 +27,20 @@ provider "aws" {
 
 
 resource "aws_instance" "web" {
-  ami                          = "ami-04505e74c0741db8d"
-  instance_type                = "t2.micro"
-  key_name                     = "ctl-lab-paul-keypair"
-  subnet_id                    = "subnet-09feeeb8979775546" # ctl-labpaul-sn-e1a-pub vpc-024b32e1dd87fb170 | ctl-lab-paul-vpc
-  security_groups              = ["sg-0cd605765f7479130", "sg-0f89ecfb2b8df28a5"]
+  ami             = "ami-04505e74c0741db8d"
+  instance_type   = "t2.micro"
+  key_name        = "ctl-lab-paul-keypair"
+  subnet_id       = "subnet-09feeeb8979775546" # ctl-labpaul-sn-e1a-pub vpc-024b32e1dd87fb170 | ctl-lab-paul-vpc
+  security_groups = ["sg-0cd605765f7479130", "sg-0f89ecfb2b8df28a5"]
   tags = {
-    Name              = "paul-baremetal_06",
+    Name                  = "paul-baremetal_06",
     CreatedFor            = "Paul Schweiss",
     Environment           = "ctl-lab",
     "Operating System"    = "Linux",
     "Project Name"        = "Terraform Cloud GitHub Actions",
     "Automation Platform" = "Terraform"
   }
-  
+
   user_data = <<-EOF
               #!/bin/bash
               echo "Hello, World" > index.html
