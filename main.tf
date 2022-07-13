@@ -20,11 +20,9 @@ terraform {
   }
 }
 
-
 provider "aws" {
   region = "us-east-1"
 }
-
 
 resource "aws_instance" "web" {
   ami             = "ami-04505e74c0741db8d"
@@ -47,8 +45,6 @@ resource "aws_instance" "web" {
               nohup busybox httpd -f -p 8080 &
               EOF
 }
-
-
 
 output "web-address" {
   value = "${aws_instance.web.public_dns}:8080"
