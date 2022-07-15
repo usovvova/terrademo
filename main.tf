@@ -12,17 +12,19 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "AndPery-Terraform-Demos"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "demo-github-actions"
     }
   }
 }
 
 
 provider "aws" {
-  region = "us-east-1"
+  region     = "us-west-2"
+  access_key = "var.aws_access_key"
+  secret_key = "var.aws_aws_secret_key"
 }
 
 
