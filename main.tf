@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "myterraform-cicd"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "github-actions-demo"
     }
   }
 }
@@ -39,6 +39,9 @@ resource "aws_instance" "web" {
               echo "Hello, World" > index.html
               nohup busybox httpd -f -p 8080 &
               EOF
+	tags = {
+		Name = "Web-Server"
+	}
 }
 
 resource "aws_security_group" "web-sg" {
