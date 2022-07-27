@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "acca76"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "webdeploy"
     }
   }
 }
@@ -36,7 +36,7 @@ resource "aws_instance" "web" {
 
   user_data = <<-EOF
               #!/bin/bash
-              echo "Hello, World" > index.html
+              echo "YO, BRO!  Hello, World" > index.html
               nohup busybox httpd -f -p 8080 &
               EOF
 }
