@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "bjss-cloud-tf"
+    organization = "arslanali_363"
 
     workspaces {
-      name = "bjss-workspace-demo"
+      name = "demo-github-bjss-actions"
     }
   }
 }
