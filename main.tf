@@ -1,3 +1,4 @@
+#nice
 terraform {
   required_providers {
     aws = {
