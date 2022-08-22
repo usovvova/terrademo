@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "raul-personal-org"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "raul-workspace"
     }
   }
 }
@@ -23,6 +23,7 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
+  profile = "raul-2"
 }
 
 
