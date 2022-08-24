@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version >= "3.26.0"  #commenting for initiating cicd
+      version >= "3.26.0"  #commenting for initiating cicdok
     }
     random = {
       source  = "hashicorp/random"
