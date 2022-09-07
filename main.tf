@@ -2,22 +2,17 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "3.26.0"
+      version = "4.29.0"
     }
     random = {
       source  = "hashicorp/random"
-      version = "3.0.1"
+      version = "3.4.2"
     }
   }
   required_version = "~> 1.0"
 
   backend "remote" {
-<<<<<<< HEAD
-    organization = "UnixManCloud"
-=======
-    organization = "UnixManInfo"
->>>>>>> 6c68a68178b4347652613b35fcf8afe4b1c3859a
-
+    organization = "CloudMan"
     workspaces {
       name = "demo-github-actions"
     }
