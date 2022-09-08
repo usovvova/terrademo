@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "HTFS-Terraform-Demos"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "HTFS-github-actions"
     }
   }
 }
@@ -42,7 +42,7 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_security_group" "web-sg" {
-  name = "${random_pet.sg.id}-sg"
+  name = "${random_pet.sg.id}-sg-htfeature"
   ingress {
     from_port   = 8080
     to_port     = 8080
