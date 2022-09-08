@@ -15,7 +15,7 @@ terraform {
     organization = "kwasky"
 
     workspaces {
-      name = "demos"
+      name = "Demos"
     }
   }
 }
