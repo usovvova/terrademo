@@ -18,6 +18,8 @@ terraform {
       name = "github-actions-demo"
     }
   }
+
+  # This is a comment
 }
 
 
