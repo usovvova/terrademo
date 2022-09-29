@@ -15,7 +15,7 @@ terraform {
     organization = "NLBP_LABS"
 
     workspaces {
-      name = "demo-github-actions"
+      name = "demo-github-action"
     }
   }
 }
