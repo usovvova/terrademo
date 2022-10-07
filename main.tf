@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "ACG-Terraform-Demo"
+    organization = "ACG-Terraform-Labs4-"
 
     workspaces {
-      name = "demo-github-actions"
+      name = "lab-migrate-state"
     }
   }
 }
