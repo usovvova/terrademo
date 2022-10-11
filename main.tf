@@ -1,3 +1,4 @@
+# Comment here
 terraform {
   required_providers {
     aws = {
@@ -11,7 +12,6 @@ terraform {
   }
   required_version = "~> 1.0"
 
-# GOGOGO Pesky GHA
   backend "remote" {
     organization = "ACG-Terraform-Demoes"
 
