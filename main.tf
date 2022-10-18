@@ -8,15 +8,14 @@ terraform {
       source  = "hashicorp/random"
       version = "3.0.1"
     }
-    
   }
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "ACGtestven-terraform-demos"
+    organization = "REPLACE_ME"
 
     workspaces {
-      name = "demo-github-actions"
+      name = "REPLACE_ME"
     }
   }
 }
