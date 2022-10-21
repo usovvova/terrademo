@@ -11,7 +11,8 @@ terraform {
   }
   required_version = "~> 1.0"
 
-  backend "cloud" {
+  backend "remote" {
+    hostname = "app.terraform.io"
     organization = "LSA-Terraform-Demos"
 
     workspaces {
