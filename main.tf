@@ -15,7 +15,7 @@ terraform {
     organization = "rf-01"
 
     workspaces {
-      name = "demo-tf-actions"
+      name = "tf-demo"
     }
   }
 }
