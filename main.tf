@@ -12,11 +12,11 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
-
-    workspaces {
-      name = "REPLACE_ME"
-    }
+    organization = "mrgilmour-TerraformCloudTutorial"
+    hostname = "app.terraform.io"
+      workspaces {
+        name = "demo-github-actions"
+      }
   }
 }
 
