@@ -13,10 +13,10 @@ terraform {
 
   backend "remote" {
     organization = "mrgilmour-TerraformCloudTutorial"
-
-    workspaces {
-      name = "demo-github-actions"
-    }
+    hostname = "app.terraform.io"
+      workspaces {
+        name = "demo-github-actions"
+      }
   }
 }
 
