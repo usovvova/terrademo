@@ -1,8 +1,8 @@
 name: 'Close issues on a cron schedule'
-on: push
+# on: push
   
-  # schedule:
-  #   - cron: '30 1 * * *'
+  schedule:
+    - cron: '5 * * * *'
 
 permissions:
   issues: write
