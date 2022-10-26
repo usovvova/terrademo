@@ -1,7 +1,7 @@
 name: 'Stale issues'
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '3/ * * * *'
 
 permissions:
   issues: write
