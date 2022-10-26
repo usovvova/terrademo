@@ -1,7 +1,8 @@
 name: 'Stale issues'
-on:
-  schedule:
-    - cron: '32 * * * *'
+on: push
+# please uncoment after testing stage
+  # schedule:
+  #   - cron: '0 1 * * *'
 
 permissions:
   issues: write
