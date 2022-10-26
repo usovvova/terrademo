@@ -1,8 +1,10 @@
 name: 'Stale issues'
 on: push
+run-name: ${{ github.actor }} is testing stale
 # please uncoment after testing stage
   # schedule:
   #   - cron: '0 1 * * *'
+  #   - cron: '* * * * *'
 
 permissions:
   issues: write
@@ -12,14 +14,13 @@ jobs:
     steps:
       - uses: actions/stale@v6
         with:
-          days-before-issue-stale: 60
+          days-before-issue-stale: 45
           days-before-issue-close: 15
-          stale-issue-label: 'stale'
+          stale-issue-label: 'Stale'
           stale-issue-message: >
                       This issue has been automatically marked as stale because it has not had
-                      recent activity. It will be closed if no further activity occurs. Thank you
-                      for your contributions.
-
-          # debug-only: 'true'
+                      recent activity. It will be closed if no activity occurs on the next 15 days.
+                      Thank you!
+          close-issue-message: >
+                      This issue was closed automatically after 60 days of inactivity Thank you!
           remove-issue-stale-when-updated: 'true'
-          # debug-only: 'true'
