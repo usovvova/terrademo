@@ -1,8 +1,10 @@
 name: 'Stale issues'
-run-name: ${{ github.actor }} is testing stale
+run-name: Cleaning up issues ${{ github.run_number }}
 on: 
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0 0 * * 5'
+# Every Friday at 00:00
+    
 
 permissions:
   issues: write
