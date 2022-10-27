@@ -1,5 +1,5 @@
 name: 'Stale issues'
-run-name: Cleaning up issues ${{ github.run_number }}
+run-name: 'Cleaning up issues ${{ github.run_number }}'
 on: push
   # schedule:
   #   - cron: '0 0 * * 5' # Every Friday at 00:00
