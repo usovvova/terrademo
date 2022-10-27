@@ -2,7 +2,7 @@ name: 'Stale issues'
 run-name: Cleaning up issues ${{ github.run_number }}
 on: 
   schedule:
-    - cron: '0 0 * * 5'
+    - cron: '0 0 */15 * *' # Every 15 days, starting from 1 at 00:00
 # Every Friday at 00:00
     
 
