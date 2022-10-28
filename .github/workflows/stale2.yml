@@ -2,7 +2,7 @@ name: 'Stale issues on push'
 run-name: 'Cleaning up issues ${{ github.run_number }}'
 on: push
   # schedule:
-  #   - cron: '0 0 * * 5' # Every Friday at 00:00
+  #   - cron: '0 0 * * *' # Every day at 00:00
 permissions:
   issues: write
   
