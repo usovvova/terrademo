@@ -1,0 +1,25 @@
+name: 'Cleaning up pull requests'
+on:
+  schedule:
+    - cron: '0 0 1,15 * *' # At 00:00 on day-of-month 1 and 15.
+    
+permissions:
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: [ self-hosted, linux, x64, connected-ai-prod ]
+    steps:
+      - uses: actions/stale@v5
+        with:
+          days-before-pr-stale: 60
+          days-before-pr-close: 30
+          stale-pr-label: 'Stale'
+          stale-pr-message: >
+                      :warning: 
+                      This pull request has been automatically marked as stale because it has not had
+                      recent activity. It will be closed if no activity occurs on the next 30 days.
+                      Thank you!
+          close-pr-message: >
+                      This pull request was closed automatically after 90 days of inactivity.
+          remove-pr-stale-when-updated: 'true'
