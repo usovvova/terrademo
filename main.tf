@@ -20,17 +20,14 @@ terraform {
   }
 }
 
-
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-2"
 }
-
-
 
 resource "random_pet" "sg" {}
 
 resource "aws_instance" "web" {
-  ami                    = "ami-09e67e426f25ce0d7"
+  ami                    = "ami-097a2df4ac947655f"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.web-sg.id]
 
