@@ -11,15 +11,17 @@ terraform {
   }
 
   required_version = ">= 0.14.9"
-}
+	
+  backend "remote" {
+    organization = "Anu-demo"
 
-backend "remote" {
-  organization = "Anu-demo"
-
-  workspaces {
-    name = "demo_github"
+    workspaces {
+      name = "demo_github"
+    }
   }
 }
+
+
 
 provider "azurerm" {
   features {}
