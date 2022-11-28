@@ -2,14 +2,14 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.26.0"
+      version = ">= 2.26"
     }
     random = {
       source  = "hashicorp/random"
       version = "3.0.1"
     }
   }
-  required_version = "~> 1.0"
+  required_version = "">= 0.14.9""
 
   backend "remote" {
     organization = "Anu-demo"
@@ -21,7 +21,7 @@ terraform {
 }
 provider "azurerm" {
   features {}
- # skip_provider_registration = true
+  skip_provider_registration = true
 }
 
 # Create a virtual network
