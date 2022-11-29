@@ -1,3 +1,4 @@
+#main
 terraform {
   required_providers {
     aws = {
@@ -12,10 +13,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "paracode"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "Terraformtf"
     }
   }
 }
