@@ -6,16 +6,16 @@ terraform {
     }
     random = {
       source  = "hashicorp/random"
-      version = "3.0.1"
+      version = "3.4.3"
     }
   }
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "paracode"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "githubdemo-actions"
     }
   }
 }
