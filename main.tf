@@ -15,7 +15,7 @@ terraform {
     organization = "paracode"
 
     workspaces {
-      name = "github-demo-actions"
+      name = "githubdemo-actions"
     }
   }
 }
