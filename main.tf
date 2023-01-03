@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "APIBasedWorkspace"
+    organization = "ACG-Terraform-Labs_85"
 
     workspaces {
-      name = "lab-migrate-state"
+      name = "APIBasedWorkspace"
     }
   }
 }
