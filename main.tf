@@ -15,7 +15,7 @@ terraform {
     organization = "ACG-Terraform-Labs_85"
 
     workspaces {
-      name = "APIBasedWorkspace"
+      name = "APIBasedWorkspace123"
     }
   }
 }
