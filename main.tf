@@ -15,7 +15,7 @@ terraform {
     organization = "Demo-Org18"
 
     workspaces {
-      name = "demo_workspace18:"
+      name = "demo_workspace18"
     }
   }
 }
