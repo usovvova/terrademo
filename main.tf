@@ -15,7 +15,7 @@ terraform {
     organization = "suga-Labs2"
 
     workspaces {
-      name = "Demo-githyb-actions"
+      name = "Demo-github-actions"
     }
   }
 }
