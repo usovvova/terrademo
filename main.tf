@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "MTScorp"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "Demo-Pipeline"
     }
   }
 }
@@ -29,14 +29,14 @@ provider "aws" {
 
 resource "random_pet" "sg" {}
 
-resource "aws_instance" "web" {
-  ami                    = "ami-09e67e426f25ce0d7"
+resource "aws_instance" "web-server" {
+  ami                    = "ami-00c39f71452c08778"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.web-sg.id]
 
   user_data = <<-EOF
               #!/bin/bash
-              echo "Hello, World" > index.html
+              echo "Take Me Out This Chat, You Will be TC Cleared, God is Working!!" > index.html
               nohup busybox httpd -f -p 8080 &
               EOF
 }
