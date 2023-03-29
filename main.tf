@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "MTScorp"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "Demo-Pipeline"
     }
   }
 }
@@ -36,7 +36,7 @@ resource "aws_instance" "web" {
 
   user_data = <<-EOF
               #!/bin/bash
-              echo "Hello, World" > index.html
+              echo "Take Me Out This Chat, You Will be TC Cleared, God is Working!!" > index.html
               nohup busybox httpd -f -p 8080 &
               EOF
 }
