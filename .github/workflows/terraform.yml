@@ -4,7 +4,11 @@ on:
   push:
     branches:
       - master
+<<<<<<< HEAD
   pull_request: 
+=======
+  pull_request:
+>>>>>>> e22d01180992d61030c0da48e533fab3ec0340c5
 
 jobs:
   terraform:
