@@ -12,7 +12,7 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "Drizz2001"
+    organization = "Drizzt2001"
 
     workspaces {
       name = "demo-github-actions"
