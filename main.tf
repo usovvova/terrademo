@@ -2,14 +2,14 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">=2.0"
+      version = "~>2.31.1"
     }
     random = {
       source  = "hashicorp/random"
       version = "3.0.1"
     }
   }
-  required_version = "~> 1.0"
+  required_version = "~>1.0"
 
   backend "remote" {
     organization = "ACG-Terraform-Demos-abdus"
@@ -24,17 +24,17 @@ terraform {
 provider "azurerm" {
   features {}
   subscription_id = "a4c81412-9cb9-4d76-aaa7-14f85696678a"
-  client_id = "15228083-4afb-4421-9826-ff06d09bfc85"
-  client_secret = "b6bf4e95-9788-43c0-a6e1-110273659091"
-  tenant_id = "ff1fc9e3-26ae-45ae-a79a-32197c30c04d"
+  client_id       = "15228083-4afb-4421-9826-ff06d09bfc85"
+  client_secret   = "b6bf4e95-9788-43c0-a6e1-110273659091"
+  tenant_id       = "ff1fc9e3-26ae-45ae-a79a-32197c30c04d"
 }
 
 resource "random_pet" "sg" {}
 
 resource "azurerm_network_security_group" "web-sg" {
-  name                = "${random_pet.sg.id}-sg"
-  location            = "East US"
-  
+  name     = "${random_pet.sg.id}-sg"
+  location = "East US"
+
   security_rule {
     name                       = "Allow_HTTP_Inbound"
     priority                   = 100
@@ -49,14 +49,14 @@ resource "azurerm_network_security_group" "web-sg" {
 }
 
 resource "azurerm_public_ip" "web-ip" {
-  name                = "${random_pet.sg.id}-ip"
-  location            = "East US"
-  allocation_method   = "Dynamic"
+  name              = "${random_pet.sg.id}-ip"
+  location          = "East US"
+  allocation_method = "Dynamic"
 }
 
 resource "azurerm_network_interface" "web-nic" {
-  name                = "${random_pet.sg.id}-nic"
-  location            = "East US"
+  name     = "${random_pet.sg.id}-nic"
+  location = "East US"
 
   ip_configuration {
     name                          = "web-ip"
