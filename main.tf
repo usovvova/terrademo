@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "test-demo-123"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "demo-github-actions"
     }
   }
 }
@@ -50,6 +50,7 @@ resource "aws_security_group" "web-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+#
 
 output "web-address" {
   value = "${aws_instance.web.public_dns}:8080"
