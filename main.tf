@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "AWS_Test_Org"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "AWS_Test_Wksp"
     }
   }
 }
