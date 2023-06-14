@@ -1,0 +1,17 @@
+---
+
+- hosts: all
+  gather_facts: no
+  serial: 1
+
+  vars_files:
+    - 'group_vars/default.yml'
+    - 'group_vars/{{ layer }}.yml'
+
+  tasks:    
+    - include_role: name=kubernetes_admin_vm
+    - include_role: name=install_jdk
+    - include_role: name=tune_jdk
+    - include_role: name=custom_mercurial_install
+    - include_role: name=kubernetes_monitoring_setup
+    - include_role: name=kube_admin_vm_python_setup
