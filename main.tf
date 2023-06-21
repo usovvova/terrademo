@@ -2,27 +2,23 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "3.26.0"
-    }
-    random = {
-      source  = "hashicorp/random"
-      version = "3.0.1"
+      version = "2.36.0"
     }
   }
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "srikanth-demo"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "srikanth-ws"
     }
   }
 }
 
 
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-south-1"
 }
 
 
@@ -30,7 +26,7 @@ provider "aws" {
 resource "random_pet" "sg" {}
 
 resource "aws_instance" "web" {
-  ami                    = "ami-09e67e426f25ce0d7"
+  ami                    = "ami-0f5ee92e2d63afc18"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.web-sg.id]
 
