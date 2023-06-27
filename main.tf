@@ -6,7 +6,7 @@ terraform {
     }
     random = {
       source  = "hashicorp/random"
-      version = "3.0.2"
+      version = "3.0.1"
     }
   }
   required_version = "~> 1.0"
@@ -36,7 +36,7 @@ resource "aws_instance" "web" {
 
   user_data = <<-EOF
               #!/bin/bash
-              echo "Hello, DogBreath" > index.html
+              echo "Hello yu, DogBreath" > index.html
               nohup busybox httpd -f -p 8080 &
               EOF
 }
