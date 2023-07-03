@@ -15,7 +15,8 @@ terraform {
     organization = "example-org-ce5d61"
 
     workspaces {
-    name = "demo-githut-actions" }
+    name = "demo-githut-actions" 
+    }
   }
 }
 
