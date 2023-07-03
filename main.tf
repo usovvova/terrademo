@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "example-org-ce5d61"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "demo-githut-actions"
     }
   }
 }
