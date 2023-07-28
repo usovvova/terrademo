@@ -1,4 +1,4 @@
-terraform {
+đterraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "ACG-Terraform-Course-Kreso"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "demo-github-actions"
     }
   }
 }
