@@ -15,7 +15,7 @@ terraform {
     organization = "rpatel-terraform-Labs"
 
     workspaces {
-      name = "demo-github-actions"
+      name = "github-action1"
     }
   }
 }
