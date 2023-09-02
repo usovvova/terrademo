@@ -4,6 +4,7 @@ terraform {
       source  = "hashicorp/aws"
       version = "3.26.0"
     }
+
     random = {
       source  = "hashicorp/random"
       version = "3.0.1"
@@ -20,12 +21,9 @@ terraform {
   }
 }
 
-
 provider "aws" {
   region = "us-east-1"
 }
-
-
 
 resource "random_pet" "sg" {}
 
