@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "AWS_ACCESS_KEY_ID"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "AWS_SECRET_ACCESS_KEY"
     }
   }
 }
