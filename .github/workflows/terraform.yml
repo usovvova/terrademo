@@ -18,7 +18,7 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           # terraform_version: 0.13.0:
-          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+          cli_config_credentials_token: ${{ 0XHaSzt7Cn6K5w.atlasv1.8sPtIYppm4lS9ADFYnFcdzeqCBCgVwDJJ0ctnPmjOzcCDNWLrF5fzNWKmkHlqdrZoDE }}
 
       - name: Terraform Format
         id: fmt
