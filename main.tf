@@ -11,13 +11,21 @@ terraform {
   }
   required_version = "~> 1.0"
 
-  backend "remote" {
+  #backend "remote" {
+  #  organization = "ACG-Terraform-Demosqgl"
+
+  #  workspaces {
+  #    name = "demo-github-actions" #
+  #  }
+  #}
+  cloud {
     organization = "ACG-Terraform-Demosqgl"
 
     workspaces {
-      name = "demo-github-actions" #
+      name = "demo-github-actions"
     }
   }
+}
 }
 
 
