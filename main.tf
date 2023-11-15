@@ -12,13 +12,14 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "ACG-Terraform-Demosqgl"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "demo-github-actions"
     }
   }
 }
+
 
 
 provider "aws" {
@@ -42,7 +43,7 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_security_group" "web-sg" {
-  name = "${random_pet.sg.id}-sg"
+  name = sg-09974dc9901f49274
   ingress {
     from_port   = 8080
     to_port     = 8080
