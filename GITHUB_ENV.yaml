@@ -1,0 +1,10 @@
+steps:
+  - name: Set the value
+    id: step_one
+    run: |
+      echo "GITHUB_TOKEN=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" >> "$GITHUB_ENV"
+  - name: Use the value
+    id: step_two
+    run: |
+      printf '%s\n' "$GITHUB_TOKEN" # This will output 'yellow'
+
