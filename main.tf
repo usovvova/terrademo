@@ -15,7 +15,7 @@ terraform {
     organization = "FluidGenius"
 
     workspaces {
-      name = "demo-github-actions"
+      name = "demo-github-action"
     }
   }
 }
