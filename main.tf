@@ -15,7 +15,7 @@ terraform {
     organization = "jpsolla-org"
 
     workspaces {
-      name = "tf-github-aws-dem"
+      name = "tf-github-aws-demo"
     }
   }
 }
