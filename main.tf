@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "mygithub001"
+    organization = "ACG-Terraform-pradip"
 
     workspaces {
-      name = "github-action"
+      name = "demo-github-action"
     }
   }
 }
