@@ -41,6 +41,17 @@ resource "aws_instance" "web" {
               EOF
 }
 
+resource "aws_instance" "app_server" {
+  ami           = "ami-09e67e426f25ce0d7"
+  vpc_security_group_ids = [aws_security_group.web-sg.id]
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "ExampleAppServerInstance"
+  }
+}
+
+
 resource "aws_security_group" "web-sg" {
   name = "${random_pet.sg.id}-sg"
   ingress {
