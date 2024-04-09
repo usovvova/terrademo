@@ -12,19 +12,19 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "ACG-Terraform-pradip"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "demo-github-action"
     }
   }
 }
 
 
+
 provider "aws" {
   region = "us-east-1"
 }
-
 
 
 resource "random_pet" "sg" {}
@@ -40,6 +40,17 @@ resource "aws_instance" "web" {
               nohup busybox httpd -f -p 8080 &
               EOF
 }
+
+resource "aws_instance" "app_server" {
+  ami           = "ami-09e67e426f25ce0d7"
+  vpc_security_group_ids = [aws_security_group.web-sg.id]
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "ExampleAppServerInstance"
+  }
+}
+
 
 resource "aws_security_group" "web-sg" {
   name = "${random_pet.sg.id}-sg"
