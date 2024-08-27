@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "Test-Terraform-Matrix"
+    organization = "Test-Terraform-test"
 
     workspaces {
-      name = "demo-github-action"
+      name = "demo-github-test"
     }
   }
 }
